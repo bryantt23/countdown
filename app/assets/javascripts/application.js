@@ -37,12 +37,14 @@ $(document).ready(function() {
     var element = document.getElementById(elem);
     element.innerHTML = "Please wait for "+secs+" seconds";
     if(secs < 1) {
-      clearTimeout(timer);
+      // clearTimeout(timer);
       element.innerHTML = '<h2>Countdown Complete!</h2>';
       element.innerHTML += '<a href="#">Click here now</a>';
     }
     secs--;
-    var timer = setTimeout(countDown(secs,elem),1000);
+    setTimeout(function() { countDown(secs,elem); }, 1000);
+    // setTimeout(countDown(secs,elem),1000);
+    // var timer = setTimeout(countDown(secs,elem),1000);
   };
 
 
