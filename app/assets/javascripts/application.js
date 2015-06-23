@@ -14,3 +14,37 @@
 //= require jquery_ujs
 //= require turbolinks
 //= require_tree .
+
+
+
+$(document).ready(function() {
+
+
+
+  $('#my-link').click(function(event){
+    alert('Hooray!');
+    event.preventDefault(); // Prevent link from following its href
+  });
+
+  $('#Start').click(function(event){
+    event.preventDefault(); // Prevent link from following its href
+
+    countDown(1500,"status");
+  });
+
+  function countDown(secs,elem) {
+    // alert('Start22!');
+    var element = document.getElementById(elem);
+    element.innerHTML = "Please wait for "+secs+" seconds";
+    if(secs < 1) {
+      clearTimeout(timer);
+      element.innerHTML = '<h2>Countdown Complete!</h2>';
+      element.innerHTML += '<a href="#">Click here now</a>';
+    }
+    secs--;
+    var timer = setTimeout(countDown(secs,elem),1000);
+  };
+
+
+
+});
