@@ -42,6 +42,7 @@ $(document).ready(function() {
       element.innerHTML += '<a href="#">Click here now</a>';
     }
     secs--;
+    // http://stackoverflow.com/a/24336939/3828654
     setTimeout(function() { countDown(secs,elem); }, 1000);
     // setTimeout(countDown(secs,elem),1000);
     // var timer = setTimeout(countDown(secs,elem),1000);
